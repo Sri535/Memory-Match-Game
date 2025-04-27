@@ -14,6 +14,7 @@ let lockBoard = false;
 let timer = 0;
 let interval;
 let flips = 0;
+let gridSize = 4; // default normal
 
 // Audio
 const bgMusic = document.getElementById('background-music');
@@ -57,11 +58,14 @@ function selectCategory(category) {
   startTimer();
 }
 
+
 function buildBoard() {
   const board = document.getElementById('game-board');
   board.innerHTML = '';
+  board.className = `board ${gridClassName(gridSize)}`;
+
   let emojis = [...selectedEmojis];
-  emojis = shuffleArray(emojis).slice(0, 8);
+  emojis = shuffleArray(emojis).slice(0, (gridSize * gridSize) / 2);
   emojis = [...emojis, ...emojis];
   emojis = shuffleArray(emojis);
 
@@ -74,6 +78,7 @@ function buildBoard() {
     board.appendChild(card);
   });
 }
+
 
 function flipCard() {
   if (lockBoard) return;
@@ -101,9 +106,10 @@ function checkMatch() {
     secondCard.classList.add('matched');
     matchSound.play();
     resetBoard();
-    if (document.querySelectorAll('.matched').length === 16) {
-      gameOver();
-    }
+   if (document.querySelectorAll('.matched').length === (gridSize * gridSize)) {
+  gameOver();
+}
+
   } else {
     lockBoard = true;
     setTimeout(() => {
@@ -135,6 +141,19 @@ function startTimer() {
     document.getElementById('timer').innerText = timer;
   }, 1000);
 }
+
+function selectDifficulty(size) {
+  gridSize = size;
+  document.getElementById('difficulty-screen').style.display = 'none';
+  document.getElementById('category-screen').style.display = 'block';
+}
+
+function gridClassName(size) {
+  if (size === 2) return 'easy';
+  if (size === 4) return 'normal';
+  if (size === 6) return 'hard';
+}
+
 
 function gameOver() {
   clearInterval(interval);
