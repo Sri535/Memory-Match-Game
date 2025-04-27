@@ -1,35 +1,21 @@
-# 🧠 Memory Card Flip Game
+# 🧠 Memory Match Game
 
-Welcome to Memory Match!  
-Test your memory and concentration skills by flipping cards and matching pairs. 🚀
+A colorful, animated Memory Card Flip game using categorized emojis!
 
----
+## Features
+- 🎨 Select category (Fruits, Food, Astrology, Hands, Smileys, Mixed)
+- 🌞 Light and Dark mode toggle
+- 🎵 Background music and sound effects
+- ⏱ Timer and flip counter
+- 🏆 Best Time saved in browser
+- 📱 Mobile Friendly and responsive
+- 🚀 Easy to host on GitHub Pages!
 
-## 🎮 Game Features
-
-- ✅ **Difficulty Levels** (Easy 2x2, Normal 4x4, Hard 6x6)
-- ✅ **Flips Counter & Timer**
-- ✅ **Animated Card Flip Effects**
-- ✅ **Sound Effects on Flip and Match**
-- ✅ **High Score Tracking (localStorage)**
-- ✅ **Background Music**
-- ✅ **Light/Dark Mode Toggle**
-- ✅ **Confetti Special Effects when Matching!**
-
----
-
-## 🛠 How to Play
-
-1. **Choose a difficulty level** (Easy/Normal/Hard).
-2. **Click cards** to flip them over.
-3. **Match two identical emojis** to clear them.
-4. **Beat your high score** by using fewer flips and finishing faster!
+## How to Play
+1. Pick a category.
+2. Flip two cards at a time.
+3. Match all pairs as fast as you can!
 
 ---
 
-## 🖥 How to Run Locally
-
-1. Clone this repo:
-   ```bash
-   git clone https://github.com/yourusername/memory-card-flip.git
-   cd memory-card-flip
+Built with 💖 using HTML, CSS, JavaScript.
