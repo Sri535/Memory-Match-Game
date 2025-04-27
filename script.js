@@ -44,6 +44,20 @@ document.getElementById('music-toggle').onclick = () => {
   }
 };
 
+function selectDifficulty(size) {
+  gridSize = size;
+  document.getElementById('difficulty-screen').style.display = 'none';
+  document.getElementById('category-screen').style.display = 'block';
+}
+
+function gridClassName(size) {
+  if (size === 2) return 'easy';
+  if (size === 4) return 'normal';
+  if (size === 6) return 'hard';
+}
+
+
+
 function selectCategory(category) {
   document.getElementById('category-screen').style.display = 'none';
   document.getElementById('game-board').style.display = 'grid';
@@ -142,17 +156,6 @@ function startTimer() {
   }, 1000);
 }
 
-function selectDifficulty(size) {
-  gridSize = size;
-  document.getElementById('difficulty-screen').style.display = 'none';
-  document.getElementById('category-screen').style.display = 'block';
-}
-
-function gridClassName(size) {
-  if (size === 2) return 'easy';
-  if (size === 4) return 'normal';
-  if (size === 6) return 'hard';
-}
 
 
 function gameOver() {
