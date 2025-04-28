@@ -15,6 +15,25 @@ const emojiSets = {
   mixed: ['😀','🍕','🌞','🍎','😂','🍩','🌟','🍌','😉','🍟','🔮','🍇','😍','🍫','♈','🍒','🤗','🍿','♊','🍍']
 };
 
+function playMusic() {
+  const music = document.getElementById('background-music');
+  music.volume = 0.2; // softer background music
+  music.play();
+}
+function toggleMusic() {
+  const music = document.getElementById('background-music');
+  const muteButton = document.getElementById('mute-button');
+
+  if (music.muted) {
+    music.muted = false;
+    muteButton.textContent = '🔈'; // Change to speaker icon
+  } else {
+    music.muted = true;
+    muteButton.textContent = '🔇'; // Change to muted speaker icon
+  }
+}
+
+
 function selectDifficulty(size) {
   selectedDifficulty = size;
   document.getElementById('difficulty-screen').classList.remove('active');
