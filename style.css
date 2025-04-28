@@ -94,3 +94,51 @@ body {
   to { transform: scale(1); opacity: 1; }
 }
 
+/* Mobile-first responsive design for 6x6 grid */
+@media (max-width: 600px) {
+  /* Smaller grids for mobile devices */
+  .game-board {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 cards per row for mobile */
+    grid-gap: 10px;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 10px;
+  }
+
+  .game-card {
+    width: 70px; /* Smaller cards on mobile */
+    height: 70px;
+    font-size: 1.5rem; /* Adjust the font size of emoji */
+  }
+
+  .popup-content {
+    width: 90%; /* Make the popup content more responsive */
+    padding: 1rem;
+    font-size: 1.2rem;
+  }
+
+  .popup-content button {
+    font-size: 1rem; /* Adjust the button text size */
+    padding: 8px 16px;
+  }
+}
+
+/* For tablets and slightly larger screens (600px - 900px) */
+@media (max-width: 900px) and (min-width: 601px) {
+  .game-board {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 cards per row for medium-sized screens */
+    grid-gap: 12px;
+  }
+
+  .game-card {
+    width: 80px; /* Slightly larger cards */
+    height: 80px;
+    font-size: 1.7rem;
+  }
+
+  .popup-content {
+    width: 80%;
+  }
+}
