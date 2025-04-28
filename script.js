@@ -105,6 +105,13 @@ function launchConfetti() {
   }, 250);
 }
 
+function showWinPopup() {
+  const popup = document.getElementById('win-popup');
+  popup.classList.remove('hidden');
+}
+function restartGame() {
+  location.reload(); // Simply reload page to restart everything
+}
 
 
 function flipCard(card) {
@@ -148,6 +155,7 @@ function checkVictory() {
    
     updateHighScore();
     launchConfetti(); // 🎉 Launch confetti when game is completed!
+    showWinPopup(); // 🏆 Show the winning popup
   }
 }
 
