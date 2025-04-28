@@ -78,7 +78,7 @@ function startGame() {
   updateHighScore();
 }
 function launchConfetti() {
-  const duration = 5 * 1000; // 2 seconds
+  const duration = 15* 1000; // 2 seconds
   const animationEnd = Date.now() + duration;
   const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 1000 };
   document.getElementById('win-popper').play();
