@@ -77,6 +77,35 @@ function startGame() {
   document.getElementById('background-music').play();
   updateHighScore();
 }
+function launchConfetti() {
+  const duration = 2 * 1000; // 2 seconds
+  const animationEnd = Date.now() + duration;
+  const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 1000 };
+
+  function randomInRange(min, max) {
+    return Math.random() * (max - min) + min;
+  }
+
+  const interval = setInterval(function() {
+    const timeLeft = animationEnd - Date.now();
+
+    if (timeLeft <= 0) {
+      clearInterval(interval);
+    }
+
+    const particleCount = 50 * (timeLeft / duration);
+    confetti(Object.assign({}, defaults, {
+      particleCount,
+      origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 }
+    }));
+    confetti(Object.assign({}, defaults, {
+      particleCount,
+      origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 }
+    }));
+  }, 250);
+}
+
+
 
 function flipCard(card) {
   if (lockBoard || card.classList.contains('flipped') || card.classList.contains('matched')) return;
@@ -116,7 +145,9 @@ function checkVictory() {
       localStorage.setItem('highscore', JSON.stringify(time));
     }
     alert('Congratulations! You matched all cards!');
+    clearInterval(timerInterval);
     updateHighScore();
+    launchConfetti(); // 🎉 Launch confetti when game is completed!
   }
 }
 
