@@ -145,7 +145,7 @@ function checkVictory() {
       localStorage.setItem('highscore', JSON.stringify(time));
     }
     alert('Congratulations! You matched all cards!');
-    clearInterval(timerInterval);
+   
     updateHighScore();
     launchConfetti(); // 🎉 Launch confetti when game is completed!
   }
