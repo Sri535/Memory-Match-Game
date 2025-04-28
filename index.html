@@ -1,28 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Memory Match Game</title>
-
-  <!-- Favicon -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎴</text></svg>">
-
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Memory Match Game</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-
 <div id="difficulty-screen" class="screen active">
   <h2>Select Difficulty</h2>
   <div class="difficulties">
-    <button onclick="selectDifficulty(2)">🍼 Easy</button>
-    <button onclick="selectDifficulty(4)">🎯 Normal</button>
-    <button onclick="selectDifficulty(6)">🔥 Hard</button>
+    <button onclick="selectDifficulty(2)">🍼 Easy (2x2)</button>
+    <button onclick="selectDifficulty(4)">🎯 Normal (4x4)</button>
+    <button onclick="selectDifficulty(6)">🔥 Hard (6x6)</button>
   </div>
 </div>
-
 <div id="category-screen" class="screen">
-  <h2>Select Category</h2>
+  <h2>Select Emoji Category</h2>
   <div class="categories">
     <button onclick="selectCategory('fruits')">🍓 Fruits</button>
     <button onclick="selectCategory('food')">🍔 Food</button>
@@ -32,22 +27,18 @@
     <button onclick="selectCategory('mixed')">🌟 Mixed</button>
   </div>
 </div>
-
 <div id="game-container" class="screen">
   <div class="stats">
-    <span>Time: <span id="timer">0</span> sec</span> |
+    <span>Time: <span id="timer">0</span>s</span> |
     <span>Flips: <span id="flips">0</span></span> |
     <span>High Score: <span id="highscore">0</span></span>
-    <button onclick="toggleTheme()">🌓</button>
+    <button onclick="toggleTheme()">🌓 Theme</button>
   </div>
   <div id="game-board" class="board"></div>
 </div>
-
 <audio id="background-music" src="assets/background-music.mp3" loop></audio>
 <audio id="flip-sound" src="assets/flip-sound.mp3"></audio>
 <audio id="match-sound" src="assets/match-sound.mp3"></audio>
-
-<script src="script.js"></script>
-
+<script src="script.js" defer></script>
 </body>
 </html>

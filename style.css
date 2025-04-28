@@ -1,87 +1,45 @@
 body {
   font-family: 'Arial', sans-serif;
-  text-align: center;
   margin: 0;
-  background-color: #f0f0f0;
+  padding: 0;
+  background: #f0f0f0;
+  text-align: center;
   transition: background 0.5s, color 0.5s;
 }
-
-.dark-mode {
-  background-color: #121212;
-  color: #f0f0f0;
-}
-
-h2 {
-  margin-top: 20px;
-}
-
-.categories button, .difficulties button {
+.dark-mode { background: #121212; color: #eee; }
+.screen { display: none; padding: 20px; }
+.screen.active { display: block; }
+.difficulties button, .categories button {
   margin: 10px;
-  padding: 10px 20px;
-  font-size: 20px;
+  padding: 15px 25px;
+  font-size: 1.2em;
+  border: none;
+  border-radius: 10px;
+  background: #00aaff;
+  color: white;
+  cursor: pointer;
 }
-
-.board {
-  margin: 30px auto;
-  display: grid;
-  justify-content: center;
-  grid-gap: 15px;
-  max-width: 90vw;
-}
-
-.board.easy {
-  grid-template-columns: repeat(2, 80px);
-}
-
-.board.normal {
-  grid-template-columns: repeat(4, 80px);
-}
-
-.board.hard {
-  grid-template-columns: repeat(6, 80px);
-}
-
+.difficulties button:hover, .categories button:hover { background: #0077cc; }
+.stats { margin-bottom: 20px; font-size: 1.2em; }
+.board { display: grid; justify-content: center; gap: 10px; }
+.board.easy { grid-template-columns: repeat(2, 100px); }
+.board.normal { grid-template-columns: repeat(4, 100px); }
+.board.hard { grid-template-columns: repeat(6, 80px); }
 .card {
   width: 80px;
   height: 80px;
   background: #ccc;
-  font-size: 40px;
+  font-size: 2em;
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
   border-radius: 10px;
-  transition: transform 0.3s;
-}
-
-.card.flipped, .card.matched {
-  background: #fff;
-  transform: rotateY(180deg);
-}
-
-.hidden-emoji {
-  display: none;
-}
-
-.card.flipped .hidden-emoji, .card.matched .hidden-emoji {
-  display: block;
-}
-
-.stats {
-  margin-top: 10px;
-}
-
-.screen {
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.5s ease, visibility 0.5s ease;
-}
-
-.screen.active {
-  opacity: 1;
-  visibility: visible;
-}
-
-button {
   cursor: pointer;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
 }
+.card.flipped, .card.matched { transform: rotateY(180deg); }
+.card span { transform: rotateY(180deg); }
+.hidden-emoji { display: none; }
+.card.flipped .hidden-emoji, .card.matched .hidden-emoji { display: block; }
