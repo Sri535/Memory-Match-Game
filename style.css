@@ -94,6 +94,64 @@ body {
   to { transform: scale(1); opacity: 1; }
 }
 
+/* Subtle animations */
+
+/* Card flip animation */
+.game-card {
+  transform-style: preserve-3d;
+  transition: transform 0.5s ease; /* Smooth flip animation */
+}
+
+.game-card.flipped {
+  transform: rotateY(180deg); /* Flip the card */
+}
+
+/* Hover effect for cards */
+.game-card:hover {
+  transform: scale(1.05); /* Slight zoom effect on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow effect */
+}
+
+/* Popup open/close animation */
+@keyframes popupOpen {
+  from {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes popupClose {
+  from {
+    transform: scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+}
+
+/* Apply animations to popup content */
+.popup-content {
+  animation: popupOpen 0.4s ease-out;
+}
+
+/* Apply close animation when popup is hidden */
+.popup.hidden .popup-content {
+  animation: popupClose 0.4s ease-out;
+}
+
+/* Button hover effect */
+.popup-content button:hover {
+  background-color: #45a049; /* Slightly darker shade on hover */
+  transform: scale(1.1); /* Slight zoom on hover */
+}
+
+
 /* Mobile-first responsive design for 6x6 grid */
 @media (max-width: 600px) {
   /* Smaller grids for mobile devices */
@@ -107,20 +165,25 @@ body {
   }
 
   .game-card {
-    width: 70px; /* Smaller cards on mobile */
+    width: 70px; /* Adjusted card size */
     height: 70px;
-    font-size: 1.5rem; /* Adjust the font size of emoji */
+    font-size: 1.5rem; /* Adjusted emoji font size for readability */
   }
 
   .popup-content {
-    width: 90%; /* Make the popup content more responsive */
+    width: 85%; /* Reduced width of popup on mobile */
     padding: 1rem;
-    font-size: 1.2rem;
+    font-size: 1.2rem; /* Adjusted font size for mobile */
   }
 
   .popup-content button {
-    font-size: 1rem; /* Adjust the button text size */
-    padding: 8px 16px;
+    font-size: 1rem; /* Adjusted button font size */
+    padding: 10px 20px; /* Increased padding for better tapping */
+  }
+
+  /* Ensure the header text is properly sized */
+  .popup-content h2 {
+    font-size: 1.5rem; /* Adjust header font size for small screens */
   }
 }
 
@@ -142,3 +205,4 @@ body {
     width: 80%;
   }
 }
+
