@@ -81,7 +81,7 @@ function launchConfetti() {
   const duration = 2 * 1000; // 2 seconds
   const animationEnd = Date.now() + duration;
   const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 1000 };
-
+  document.getElementById('win-popper').play();
   function randomInRange(min, max) {
     return Math.random() * (max - min) + min;
   }
