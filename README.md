@@ -19,3 +19,10 @@ A colorful, animated Memory Card Flip game using categorized emojis!
 ---
 
 Built with 💖 using HTML, CSS, JavaScript.
+
+---
+## Visitor Stats
+
+![Views](https://komarev.com/ghpvc/?username=Sri535&color=brightgreen)
+![Visitor Badge](https://visitor-badge.laobi.icu/badge?page_id=Memory-Match-Game)
+
